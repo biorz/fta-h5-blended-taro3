@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">89.55% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>68/68</span>
+                <span class='fraction'>60/67</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75% </span>
+                <span class="strong">78.57% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>12/16</span>
+                <span class='fraction'>11/14</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">89.55% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>68/68</span>
+                <span class='fraction'>60/67</span>
             </div>
         
             
@@ -130,8 +130,7 @@
 <a name='L65'></a><a href='#L65'>65</a>
 <a name='L66'></a><a href='#L66'>66</a>
 <a name='L67'></a><a href='#L67'>67</a>
-<a name='L68'></a><a href='#L68'>68</a>
-<a name='L69'></a><a href='#L69'>69</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L68'></a><a href='#L68'>68</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -164,7 +163,6 @@
 <span class="cline-any cline-yes">175x</span>
 <span class="cline-any cline-yes">175x</span>
 <span class="cline-any cline-yes">175x</span>
-<span class="cline-any cline-yes">175x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -181,13 +179,13 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -231,7 +229,6 @@ export default class MainPlugin {
   addLoader(_loaderContext, module: any) {
     const { designWidth, deviceRatio } = this.options
 &nbsp;
-    console.log(module.resource)
     if (!this.appEntries.includes(module.resource)) return
 &nbsp;
     module.loaders.push({
@@ -248,21 +245,21 @@ export default class MainPlugin {
   getAppEntry(compiler) {
     let { entry } = compiler.options
 &nbsp;
-    if (typeof entry === 'object' &amp;&amp; !Array.isArray(entry)) {
-      entry = Object.entries(entry).map(([key, val]) =&gt; {
-        if (Array.isArray(val)) return val
-<span class="branch-0 cbranch-no" title="branch not covered" >        return typeof val == 'string' ? val <span class="branch-0 cbranch-no" title="branch not covered" ></span>: (val as Record&lt;string, any&gt;)?.import</span>
-      })
-&nbsp;
-      entry = [].concat.apply([], entry)
-    }
+    if (typeof entry === 'object' &amp;&amp; !Array.isArray(entry)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >      entry = Object.entries(entry).map(([key, val]) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        if (Array.isArray(val)) return val</span>
+<span class="cstat-no" title="statement not covered" >        return typeof val == 'string' ? val : (val as Record&lt;string, any&gt;)?.import</span>
+<span class="cstat-no" title="statement not covered" >      })</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >      entry = [].concat.apply([], entry)</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     entry = entry
       .filter((it) =&gt; {
         return !~it.indexOf('webpack-dev-server') &amp;&amp; !~it.indexOf('node_modules')
       })
       .map((it) =&gt; {
-        return path.isAbsolute(it) <span class="branch-0 cbranch-no" title="branch not covered" >? it </span>: path.join(compiler.context, it)
+        return path.isAbsolute(it) ? it <span class="branch-0 cbranch-no" title="branch not covered" >: path.join(compiler.context, it)</span>
       })
     return entry
   }
@@ -274,7 +271,7 @@ export default class MainPlugin {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Tue Jun 28 2022 17:18:34 GMT+0800 (China Standard Time)
+                at Tue Jun 28 2022 19:30:11 GMT+0800 (China Standard Time)
             </div>
         <script src="../../../prettify.js"></script>
         <script>

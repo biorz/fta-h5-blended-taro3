@@ -2,12 +2,12 @@
   "name": "@fta/h5-blended-taro3",
   "version": "1.0.2",
   "description": "在 react h5 中使用 taro",
-  "main": "./lib/src/index.js",
+  "main": "./lib/index.js",
   "author": "孙健 <jian.sun1@amh-group.com>",
   "license": "MIT",
   "private": false,
   "scripts": {
-    "test": "jest",
+    "test": "jest --silent",
     "clear": "rimraf lib",
     "build": "tsc --project ./tsconfig.json",
     "dev:lib": "tsc --project ./tsconfig.json --watch"
