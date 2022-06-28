@@ -1,5 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`chain entries of object type 1`] = `39`;
+
 exports[`chain inject entry on build 1`] = `39`;
 
 exports[`chain inject entry on dev server 1`] = `39`;
@@ -62,6 +64,7 @@ Object {
 
 exports[`chain modify webpack config 1`] = `
 Object {
+  "context": "/Users/biorz/workspace/fta-view/packages/config/h5-blended-taro3/__test__/mock",
   "entry": Array [
     "/Users/biorz/workspace/fta-view/packages/config/h5-blended-taro3/__test__/mock/src/app.tsx",
   ],

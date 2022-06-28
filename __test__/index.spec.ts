@@ -37,4 +37,19 @@ describe('chain', () => {
     const output = getOutput(stats, config)
     expect(output).toEqual(expect.stringContaining('defineCustomElements'))
   })
+
+  test('entries of object type', async () => {
+    const config = h5BlendedTaro3({
+      ...webpackConfig,
+      entry: {
+        app: './src/app.tsx',
+      },
+    })
+
+    const stats = await devServer(config)
+    const assets = stats?.toJson().assets || []
+    expect(assets.length).toMatchSnapshot()
+    const output = getOutput(stats, config)
+    expect(output).toEqual(expect.stringContaining('defineCustomElements'))
+  })
 })

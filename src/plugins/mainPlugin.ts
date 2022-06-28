@@ -46,9 +46,22 @@ export default class MainPlugin {
   getAppEntry(compiler) {
     let { entry } = compiler.options
 
-    entry = entry.filter((it) => {
-      return !~it.indexOf('webpack-dev-server') && !~it.indexOf('node_modules')
-    })
+    if (typeof entry === 'object' && !Array.isArray(entry)) {
+      entry = Object.entries(entry).map(([key, val]) => {
+        if (Array.isArray(val)) return val
+        return typeof val == 'string' ? val : (val as Record<string, any>)?.import
+      })
+
+      entry = [].concat.apply([], entry)
+    }
+
+    entry = entry
+      .filter((it) => {
+        return !~it.indexOf('webpack-dev-server') && !~it.indexOf('node_modules')
+      })
+      .map((it) => {
+        return path.isAbsolute(it) ? it : path.join(compiler.context, it)
+      })
     return entry
   }
 }

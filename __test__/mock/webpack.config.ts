@@ -4,6 +4,7 @@ import * as webpack from 'webpack'
 const srcPath = path.resolve(__dirname, '../src')
 
 const config: webpack.Configuration = {
+  context: __dirname,
   mode: 'development',
   entry: [path.resolve(__dirname, './src/app.tsx')],
   output: {
