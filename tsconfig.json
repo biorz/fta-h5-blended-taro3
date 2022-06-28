@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "outDir": "lib",
+    "target": "ES5",
+    "module": "CommonJS",
+    "baseUrl": ".",
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "jsx": "react",
+    "jsxFactory": "React.createElement",
+    "jsxFragmentFactory": "React.Fragment",
+    "esModuleInterop": true,
+    "declaration": true
+  },
+  "compileOnSave": false,
+  "exclude": ["node_modules/*", "dist/*"]
+}

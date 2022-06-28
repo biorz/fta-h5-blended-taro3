@@ -1,0 +1,164 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`chain inject entry on build 1`] = `39`;
+
+exports[`chain inject entry on dev server 1`] = `39`;
+
+exports[`chain modify webpack chain 1`] = `
+Object {
+  "module": Object {
+    "rules": Array [
+      Object {
+        "include": Array [
+          /@tarojs/,
+        ],
+        "test": /\\\\\\.js\\|\\\\\\.ts\\$/,
+        "use": Array [
+          Object {
+            "loader": "babel-loader",
+          },
+        ],
+      },
+    ],
+  },
+  "plugins": Array [
+    DefinePlugin {
+      "definitions": Object {
+        "ENABLE_ADJACENT_HTML": "false",
+        "ENABLE_CLONE_NODE": "false",
+        "ENABLE_CONTAINS": "false",
+        "ENABLE_INNER_HTML": "false",
+        "ENABLE_MUTATION_OBSERVER": "false",
+        "ENABLE_SIZE_APIS": "false",
+        "ENABLE_TEMPLATE_CONTENT": "false",
+        "process.env.TARO_ENV": "\\"h5\\"",
+      },
+    },
+    MainPlugin {
+      "options": Object {
+        "designRadio": Object {
+          "750": 1,
+        },
+        "designWidth": 750,
+        "deviceRatio": Object {},
+      },
+    },
+  ],
+  "resolve": Object {
+    "alias": Object {
+      "@tarojs/components$": "@tarojs/components/dist-h5/react",
+      "@tarojs/taro": "@tarojs/taro-h5",
+    },
+    "mainFields": Array [
+      "main:h5",
+      "browser",
+      "module",
+      "jsnext:main",
+      "main",
+    ],
+  },
+}
+`;
+
+exports[`chain modify webpack config 1`] = `
+Object {
+  "entry": Array [
+    "/Users/biorz/workspace/fta-view/packages/config/h5-blended-taro3/__test__/mock/src/app.tsx",
+  ],
+  "externals": Array [
+    "react",
+  ],
+  "mode": "development",
+  "module": Object {
+    "rules": Array [
+      Object {
+        "exclude": /node_modules/,
+        "include": Array [
+          "/Users/biorz/workspace/fta-view/packages/config/h5-blended-taro3/__test__/mock/src",
+        ],
+        "loader": "babel-loader",
+        "test": /\\\\\\.\\(js\\|mjs\\|jsx\\|ts\\|tsx\\)\\$/,
+      },
+      Object {
+        "test": /\\\\\\.css\\$/,
+        "use": Array [
+          "style-loader",
+          "css-loader",
+          "postcss-loader",
+        ],
+      },
+      Object {
+        "include": Array [
+          /@tarojs/,
+        ],
+        "test": /\\\\\\.js\\|\\\\\\.ts\\$/,
+        "use": Array [
+          Object {
+            "loader": "babel-loader",
+          },
+        ],
+      },
+    ],
+  },
+  "output": Object {
+    "path": "/Users/biorz/workspace/fta-view/packages/config/h5-blended-taro3/__test__/mock/dist",
+  },
+  "plugins": Array [
+    DefinePlugin {
+      "definitions": Object {
+        "process.env": Object {
+          "CODE_ENV": undefined,
+          "NODE_ENV": "\\"test\\"",
+          "USEMOCK": undefined,
+        },
+      },
+    },
+    DefinePlugin {
+      "definitions": Object {
+        "ENABLE_ADJACENT_HTML": "false",
+        "ENABLE_CLONE_NODE": "false",
+        "ENABLE_CONTAINS": "false",
+        "ENABLE_INNER_HTML": "false",
+        "ENABLE_MUTATION_OBSERVER": "false",
+        "ENABLE_SIZE_APIS": "false",
+        "ENABLE_TEMPLATE_CONTENT": "false",
+        "process.env.TARO_ENV": "\\"h5\\"",
+      },
+    },
+    MainPlugin {
+      "options": Object {
+        "designRadio": Object {
+          "750": 1,
+        },
+        "designWidth": 750,
+        "deviceRatio": Object {},
+      },
+    },
+  ],
+  "resolve": Object {
+    "alias": Object {
+      "@mw": "/Users/biorz/workspace/fta-view/packages/config/h5-blended-taro3/__test__/src/assets",
+      "@tarojs/components$": "@tarojs/components/dist-h5/react",
+      "@tarojs/taro": "@tarojs/taro-h5",
+      "rider": "/Users/biorz/workspace/fta-view/packages/config/h5-blended-taro3/__test__/node_modules/rider/lib/rider/index.styl",
+      "src": "/Users/biorz/workspace/fta-view/packages/config/h5-blended-taro3/__test__/src",
+    },
+    "extensions": Array [
+      "*",
+      ".js",
+      ".jsx",
+      ".json",
+      ".ts",
+      ".tsx",
+    ],
+    "mainFields": Array [
+      "main:h5",
+      "browser",
+      "module",
+      "jsnext:main",
+      "main",
+      "main:brower",
+    ],
+  },
+}
+`;
