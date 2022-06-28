@@ -1,5 +1,5 @@
 {
-  "name": "@fta/h5-blened-taro3",
+  "name": "@fta/h5-blended-taro3",
   "version": "1.0.0",
   "description": "在 react h5 中使用 taro",
   "main": "./lib/index.js",
