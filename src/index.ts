@@ -18,7 +18,7 @@ export default function <T extends TConfiguration>(_chain: T): T {
   }
 
   chain.module
-    .rule('script')
+    .rule('h5-blended-script')
     .include.add(/@tarojs/)
     .end()
     .test(/\.js|\.ts$/)
@@ -30,11 +30,11 @@ export default function <T extends TConfiguration>(_chain: T): T {
     .set('@tarojs/components$', '@tarojs/components/dist-h5/react')
 
   chain.resolve.mainFields
-    .add('main:h5')
-    .add('browser')
-    .add('module')
-    .add('jsnext:main')
-    .add('main')
+    .prepend('main')
+    .prepend('jsnext:main')
+    .prepend('module')
+    .prepend('browser')
+    .prepend('main:h5')
 
   // TODO: h5 / mw ?
   chain.plugin('define').use(webpack.DefinePlugin, [
