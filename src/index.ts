@@ -24,6 +24,13 @@ export default function <T extends TConfiguration>(_chain: T): T {
     .test(/\.js|\.ts$/)
     .use('babel')
     .loader('babel-loader')
+    .options({
+      plugins: [
+        ['@babel/plugin-proposal-class-properties'],
+        ['@babel/plugin-proposal-optional-chaining'],
+        ['@babel/plugin-proposal-nullish-coalescing-operator'],
+      ],
+    })
 
   chain.resolve.alias
     .set('@tarojs/taro', '@tarojs/taro-h5')
