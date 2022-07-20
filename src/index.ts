@@ -25,6 +25,8 @@ export default function <T extends TConfiguration>(_chain: T): T {
     .use('babel')
     .loader('babel-loader')
     .options({
+      configFile: false,
+      babelrc: false,
       plugins: [
         ['@babel/plugin-proposal-class-properties'],
         ['@babel/plugin-proposal-optional-chaining'],
