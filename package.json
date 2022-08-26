@@ -1,6 +1,6 @@
 {
   "name": "@fta/h5-blended-taro3",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "在 react h5 中使用 taro",
   "main": "./lib/index.js",
   "author": "孙健 <jian.sun1@amh-group.com>",
@@ -15,7 +15,9 @@
   "dependencies": {
     "lodash": "^4.17.21",
     "webpack-merge": "^5.8.0",
-    "webpack-chain": "^6.5.1"
+    "webpack-chain": "^6.5.1",
+    "@tarojs/components": "3.3.3",
+    "@tarojs/taro": "3.3.3"
   },
   "devDependencies": {
     "jest": "^28.1.1",
